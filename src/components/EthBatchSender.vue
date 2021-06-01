@@ -124,6 +124,9 @@
 
   </div>
 
+  <p class="footer">
+    <a href="https://github.com/johnzweng/eth-batch-sender">Code on Github</a>
+  </p>
 
 </template>
 
@@ -689,5 +692,9 @@ button {
   font-size: smaller;
 }
 
+.footer {
+  padding-top: 5em;
+  font-size: smaller;
+}
 
 </style>
