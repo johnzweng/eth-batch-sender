@@ -5,6 +5,13 @@ to multiple destinations in a single transaction.
 
 ### Live deployed at: https://ethbatchsend.zweng.at/
 
+## Demo video
+
+https://user-images.githubusercontent.com/285900/120294783-d521b000-c2c6-11eb-8b3f-294b420897a7.mp4
+
+Transaction from demo video: https://ropsten.etherscan.io/tx/0x0ea60a0caed8034b492e81761859b17d2469bf138b972b4c937ccbb922d23787
+
+
 ## Features
 
 - allows to use less than 21000 gas per receiver, when sending ETH to 4 addresses or more
