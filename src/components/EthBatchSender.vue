@@ -259,7 +259,7 @@ export default {
         throw Error('data doesnt have expected length! Expected ' + expectedLen + ' but was actually: ' + data.length + '. Check data: ' + data);
       }
 
-      if (!data.match(/^0x[0-9a-f]+/)) {
+      if (!data.match(/^0x[0-9a-f]+$/)) {
         this.messages = 'SAFETY CHECK: data doesnt seem to contain only lowercase hex characters! Check data: ' + data;
         throw Error('SAFETY CHECK: data doesnt seem to contain only lowercase hex characters! Check data: ' + data);
       }
@@ -324,7 +324,7 @@ export default {
       if (!gasLimitHexString || typeof gasLimitHexString !== 'string' || gasLimitHexString.substring(0, 2) !== '0x') {
         throw Error('estimateAmount: gasLimitHexString is no hex string: ' + gasLimitHexString);
       }
-      if (!maxGaspriceInWei || typeof maxGaspriceInWei !== 'string' || !maxGaspriceInWei.match(/[0-9]+/)) {
+      if (!maxGaspriceInWei || typeof maxGaspriceInWei !== 'string' || !maxGaspriceInWei.match(/^[0-9]+$/)) {
         throw Error('estimateAmount: maxGaspriceInWei is no decimal number string: ' + maxGaspriceInWei);
       }
 
@@ -336,7 +336,7 @@ export default {
       }
 
       // calculate maxGasPrice * maxEstimatedGasLimit
-      let gasLimitBn = new BN(gasLimitHexString.substring(2), 16);
+      let gasLimitBn = new BN(gasLimitHexString.substring(2), 16); // strip off leading '0x'
       let maxGasPriceBn = new BN(maxGaspriceInWei, 10);
 
       // sum it all up:
