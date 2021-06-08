@@ -39,6 +39,10 @@ and at the end one final OP-Code [`SELFDESTRUCT`](https://ethervm.io/#FF) to col
 remaining ETH to the sender and also to benefit from the gas refund (each `SELFDESTRUCT` OP-Code
 reduces the gas-counter of a transaction by 24000).
 
+(_NOTE_: With the "London" hardfork [ EIP-3529: Reduction in refunds](https://eips.ethereum.org/EIPS/eip-3529)
+will go live, which will remove the 24000 gas refund for `SELFDESTRUCT`. 
+See: https://github.com/ethereum/eth1.0-specs/blob/master/network-upgrades/mainnet-upgrades/london.md).
+
 All the remaining OP-Codes are just `PUSH` or `DUP` OP-Codes to set up the values on the stack
 which are expected by `CALL` and `SELFDESTRUCT`.
 
